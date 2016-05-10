@@ -13,7 +13,6 @@ public class ProductGwt implements EntryPoint {
 
 
     public void onModuleLoad() {
-        //Create an empty tab panel
         TabPanel tabPanel = new TabPanel();
 
 
@@ -22,14 +21,13 @@ public class ProductGwt implements EntryPoint {
         Label label3 = new Label("Перейти на сайт");
         label3.setHeight("200");
 
-        //create titles for tabs
         String tab1Title = "Добавить товар";
         String tab2Title = "Добавить категорию";
         String tab3Title = "Изменить товар";
         String tab4Title = "Список заказов";
         String tab5Title = "Перейти на сайт";
         String tab6Title = "Выход";
-        //create tabs
+
         final AddItemForm addItemForm = new AddItemForm();
         final CreateCategoryForm createCategoryForm = new CreateCategoryForm();
         tabPanel.add(addItemForm.getAddProductForm(), tab1Title);
@@ -39,10 +37,8 @@ public class ProductGwt implements EntryPoint {
         tabPanel.add(createCategoryForm.getCreateCategoryForm(), tab5Title);
         tabPanel.add(createCategoryForm.getCreateCategoryForm(), tab6Title);
 
-        //select first tab
         tabPanel.selectTab(0);
 
-        //set width if tabpanel
         tabPanel.setWidth("800");
 
         tabPanel.setAnimationEnabled(true);
@@ -60,7 +56,7 @@ public class ProductGwt implements EntryPoint {
                 }
             }
         });
-        // Add the widgets to the root panel.
+
         RootPanel.get().add(tabPanel);
     }
 }

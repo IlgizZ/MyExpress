@@ -12,9 +12,7 @@ import ru.kpfu.itis.model.Category;
 
 import java.util.List;
 
-/**
- * Created by etovladislav on 17.04.16.
- */
+
 public class AddItemForm {
 
     private GWTServiceAsync goodServiceAsyncService = GWT.create(GWTService.class);

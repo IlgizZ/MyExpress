@@ -1,16 +1,10 @@
 package ru.kpfu.itis.client;
 
-/**
- * Created by etovladislav on 17.04.16.
- */
-
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.*;
 
-/**
- * Created by etovladislav on 17.04.16.
- */
+
 public class CreateCategoryForm {
 
     public FormPanel getCreateCategoryForm() {
