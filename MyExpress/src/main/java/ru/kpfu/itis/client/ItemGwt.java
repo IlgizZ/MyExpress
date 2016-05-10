@@ -9,7 +9,7 @@ import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TabPanel;
 
 
-public class ProductGwt implements EntryPoint {
+public class ItemGwt implements EntryPoint {
 
 
     public void onModuleLoad() {
