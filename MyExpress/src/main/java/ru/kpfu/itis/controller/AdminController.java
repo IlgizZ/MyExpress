@@ -24,6 +24,11 @@ public class AdminController {
         return "admin/admin";
     }
 
+    @RequestMapping(value = "/gwt_admin", method = RequestMethod.GET)
+    public String gwtAdmin() {
+        return "admin/GWTAdmin";
+    }
+
     @RequestMapping(value = "admin/add_category", method = RequestMethod.POST)
     public String addCategory(@RequestParam("name") String name) {
         Category category = new Category(name);
