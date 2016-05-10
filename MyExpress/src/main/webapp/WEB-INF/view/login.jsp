@@ -32,12 +32,14 @@
             <div class="col-sm-4 col-sm-offset-1">
                 <div class="login-form">
                     <h2>Login to your account</h2>
+
                     <c:if test="${not empty error}">
                         <div class="alert alert-danger">
                             <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                             <strong>Error!</strong> Invalid login or password:(
                         </div>
                     </c:if>
+
                     <form action="/login/process" method="post">
                         <label>Email: </label>
                         <input type="text" name="email" size="20" maxlength="50" type="text">
@@ -75,21 +77,22 @@
                         if ((error = request.getParameter("regError")) != null) { %>
                     <div class="alert alert-success">
                         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                        <strong>Error!</strong> %><%
-                        if (error.equals(1)) {%>
+                        <strong>Error!</strong>
+                        <% if (error.equals("1")) {%>
                         Invalid registration !
-                        <% } else if (error.equals(2)) {%>
+                        <% } else if (error.equals("2")) {%>
                         Login is not allow to use
                         <%}%>
                     </div>
 
                     <%}%>
+
                     <sf:form action="/register" method="post" modelAttribute="user">
 
                         <sf:label path="name">Name: </sf:label> <sf:input path="name" placeholder="Name"/>
                         <sf:errors path="name"/>
 
-                        <sf:label path="email">Login: </sf:label> <sf:input type="email" path="email"
+                        <sf:label path="email">Email: </sf:label> <sf:input type="email" path="email"
                                                                             placeholder="Email Address"/>
                         <sf:errors path="email"/>
                         <sf:label path="password">Password: </sf:label> <sf:password path="password"

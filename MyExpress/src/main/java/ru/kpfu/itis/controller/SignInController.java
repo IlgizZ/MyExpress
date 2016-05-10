@@ -37,15 +37,15 @@ public class SignInController {
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public String register(@ModelAttribute UserForm userForm, BindingResult result, Model model) {
+        validator.validate(userForm, result);
         User user = UserFormToUserTransformer.transform(userForm);
         model.addAttribute("user", user);
         if (userRepository.findOneByEmail(user.getEmail()) != null) {
             return "login?regError=2";
         }
-        validator.validate(user, result);
 
         if (result.hasErrors()) {
-            return "login?regError=1";
+            return "redirect:/login?regError=1";
         } else {
             userService.signUp(userForm);
             return "redirect:/login";

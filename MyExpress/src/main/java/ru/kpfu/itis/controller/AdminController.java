@@ -24,14 +24,14 @@ public class AdminController {
         return "admin/admin";
     }
 
-    @RequestMapping(value = "admin/addcategory", method = RequestMethod.POST)
+    @RequestMapping(value = "admin/add_category", method = RequestMethod.POST)
     public String addCategory(@RequestParam("name") String name) {
         Category category = new Category(name);
         categoryService.add(category);
         return "admin/admin";
     }
 
-    @RequestMapping(value = "admin/additem", method = RequestMethod.POST)
+    @RequestMapping(value = "admin/add_item", method = RequestMethod.POST)
     public String addItem(@RequestParam("name") String name, @RequestParam("price") int price,
                           @RequestParam("description") String descript, @RequestParam("category") String categor,
                           @RequestParam("count") int count) {

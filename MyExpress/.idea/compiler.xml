@@ -23,11 +23,16 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="AllahExpress" />
+      </profile>
+      <profile default="false" name="Annotation profile for MyExpress" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
         <module name="MyExpress" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="AllahExpress" target="1.8" />
       <module name="MyExpress" target="1.8" />
     </bytecodeTargetLevel>
   </component>

@@ -9,10 +9,9 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
     <context:component-scan base-package="ru.kpfu.itis.controller"/>
 
-    <!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
-
-    <!-- Enables the Spring MVC @Controller programming model -->
     <mvc:annotation-driven/>
+    <mvc:resources mapping="/resources.hellogwt/**" location="/resources.hellogwt/"
+                   cache-period="31556926"/>
 
 
     <!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->

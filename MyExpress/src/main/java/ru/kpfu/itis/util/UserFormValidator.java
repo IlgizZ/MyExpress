@@ -3,6 +3,7 @@ package ru.kpfu.itis.util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
+import ru.kpfu.itis.form.UserForm;
 import ru.kpfu.itis.model.User;
 import ru.kpfu.itis.repository.UserRepository;
 
@@ -27,7 +28,7 @@ public class UserFormValidator implements Validator {
 
     @Override
     public void validate(Object o, Errors errors) {
-        User user = (User) o;
+        UserForm user = (UserForm) o;
         if (!validate(user.getEmail())) {
             errors.rejectValue("email", "", "Incorrect email!");
         }

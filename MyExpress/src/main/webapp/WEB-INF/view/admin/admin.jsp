@@ -20,13 +20,13 @@
     <jsp:include page="../components/header.jsp"/>
         <div class="container">
             <h2>Add Category</h2>
-            <form class="form-signin" action="<c:url value="/admin/addcategory"/>" method="post">
+            <form class="form-signin" action="<c:url value="/admin/add_category"/>" method="post">
                 <label for="inputEmail" class="sr-only">Category name</label>
                 <input name="name" type="text" id="inputEmail" class="form-control" placeholder="Category name" required autofocus>
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Add</button>
             </form>
             <h2>Add Item</h2>
-            <form class="form-signin" action="<c:url value="/admin/additem"/>" method="post">
+            <form class="form-signin" action="<c:url value="admin/add_item"/>" method="post">
                 <input name="name" type="text" id="1" class="form-control" placeholder="Item name" required autofocus>
                 <input name="price" type="text" id="2" class="form-control" placeholder="Price" required>
                 <input name="description" type="text" id="3" class="form-control" placeholder="Description" required>
