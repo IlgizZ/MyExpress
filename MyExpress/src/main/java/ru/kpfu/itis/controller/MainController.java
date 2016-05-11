@@ -2,18 +2,25 @@ package ru.kpfu.itis.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailException;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import ru.kpfu.itis.model.Item;
+import ru.kpfu.itis.model.Order;
+import ru.kpfu.itis.model.User;
 import ru.kpfu.itis.service.impl.CategoryServiceImpl;
 import ru.kpfu.itis.service.impl.ItemServiceImpl;
 import ru.kpfu.itis.util.BasketUtil;
+import ru.kpfu.itis.util.CartItem;
 import ru.kpfu.itis.util.EmailSenderUtil;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class MainController {
@@ -79,5 +86,21 @@ public class MainController {
         return "ok";
     }
 
+    @RequestMapping(value = "/profile", method = RequestMethod.GET)
+//    @Secured(isAuth ?)
+    public String profile(ModelMap map, HttpSession httpSession) {
+        String name = null;
+        String email = null;
+        String role = null;
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        name = user.getName();
+        email = user.getEmail();
+        role = user.getRole().toString().substring(5).toLowerCase();
+        map.put("Name", name);
+        map.put("Email", email);
+        map.put("Role", role);
+
+        return "profile";
+    }
 
 }

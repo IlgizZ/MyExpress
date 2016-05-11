@@ -19,7 +19,7 @@ public class Order {
     @Column(name = "order_sum")
     private double sum;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.LAZY)
     private List<Item> items = new ArrayList<>();
 
     public Order() {

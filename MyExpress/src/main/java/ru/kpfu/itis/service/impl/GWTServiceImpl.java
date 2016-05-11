@@ -2,20 +2,19 @@ package ru.kpfu.itis.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import ru.kpfu.itis.client.service.GWTService;
 import ru.kpfu.itis.model.Category;
 import ru.kpfu.itis.repository.CategoryRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 
-@Service("goodService")
+@Service("gwtService")
 public class GWTServiceImpl implements GWTService {
 
     @Autowired
     CategoryRepository categoryRepository;
-//
+
+    //
 //    @Autowired
 //    ProductRepository productRepository;
 //

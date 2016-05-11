@@ -134,7 +134,7 @@
     function doAjax(id) {
 
         var content = id;
-        alert(id);
+
         $.ajax({
             url: '/shop/addItem',
             type: 'POST',

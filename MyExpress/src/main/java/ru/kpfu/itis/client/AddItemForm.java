@@ -12,7 +12,6 @@ import ru.kpfu.itis.model.Category;
 
 import java.util.List;
 
-
 public class AddItemForm {
 
     private GWTServiceAsync goodServiceAsyncService = GWT.create(GWTService.class);
@@ -27,7 +26,7 @@ public class AddItemForm {
 
             @Override
             public void onFailure(Throwable caught) {
-                Window.alert("Error");
+                Window.alert(caught.getMessage());
             }
 
             @Override
@@ -45,12 +44,11 @@ public class AddItemForm {
         VerticalPanel panel = new VerticalPanel();
         final FormPanel form = new FormPanel();
         form.setAction("/admin/add_item");
-        form.setEncoding(FormPanel.ENCODING_MULTIPART);
+//        form.setEncoding(FormPanel.ENCODING_MULTIPART);
         form.setMethod(FormPanel.METHOD_POST);
 
         final Label status = new Label("");
         panel.add(status);
-
 
         Label itemNameLabel = new Label("Item name:");
         final TextBox nameForm;
@@ -67,7 +65,6 @@ public class AddItemForm {
         panel.add(productDescriptionLabel);
         panel.add(descriptionForm);
 
-
         Label priceProductLabel = new Label("Price:");
         final TextBox priceProductForm = new TextBox();
         priceProductForm.setName("price");
@@ -78,7 +75,7 @@ public class AddItemForm {
 
         Label categoryProductLabel = new Label("Category name:");
         list.setVisibleItemCount(0);
-        list.setName("categoryId");
+        list.setName("category");
         panel.add(categoryProductLabel);
         panel.add(list);
 

@@ -41,7 +41,7 @@ public class SignInController {
         User user = UserFormToUserTransformer.transform(userForm);
         model.addAttribute("user", user);
         if (userRepository.findOneByEmail(user.getEmail()) != null) {
-            return "login?regError=2";
+            return "redirect:/login?regError=2";
         }
 
         if (result.hasErrors()) {

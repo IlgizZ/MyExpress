@@ -57,11 +57,11 @@ public class OrderController {
             map.put("EcoTax", ecoTax);
             map.put("Total", total);
             if (total < E) {
-                return "order?empty_basket=true";
+                return "redirect:/order?empty_basket=true";
             }
             return "order";
         }
-        return "order?empty_basket=true";
+        return "redirect:/order?empty_basket=true";
     }
 
     @RequestMapping(value = "/new", method = RequestMethod.POST)
